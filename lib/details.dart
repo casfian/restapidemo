@@ -1,11 +1,16 @@
 import 'package:flutter/material.dart';
 import 'package:restapidemo/post.dart';
 
-class Details extends StatelessWidget {
-  Details({super.key, required this.passObj});
+class Details extends StatefulWidget {
+  const Details({super.key, required this.passObj});
 
-  Post passObj;
+  final Post passObj;
 
+  @override
+  State<Details> createState() => _DetailsState();
+}
+
+class _DetailsState extends State<Details> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -18,10 +23,10 @@ class Details extends StatelessWidget {
             const SizedBox(
               height: 30,
             ),
-            Text(passObj.userid.toString()),
-            Text(passObj.id.toString()),
-            Text(passObj.title),
-            Text(passObj.body),
+            Text(widget.passObj.userid.toString()),
+            Text(widget.passObj.id.toString()),
+            Text(widget.passObj.title),
+            Text(widget.passObj.body),
           ],
         ),
       ),
