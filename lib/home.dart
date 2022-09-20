@@ -58,6 +58,7 @@ class _HomeState extends State<Home> {
                     title: Text(snapshot.data[index]['title']),
                     subtitle: Text(snapshot.data[index]['body']),
                     onTap: () {
+                      //ne kalau nak pakai class to pass Object. Kalau taknak pun takpe
                       Post post = Post(snapshot.data[index]['userId'], snapshot.data[index]['id'], snapshot.data[index]['title'], snapshot.data[index]['body']);
                       MaterialPageRoute route = MaterialPageRoute(
                           builder: (context) =>
